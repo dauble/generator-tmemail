@@ -1,14 +1,14 @@
 {
   "name": "generator-tmemail",
-  "version": "0.0.0",
-  "description": "Yeoman generator",
+  "version": "0.1.0",
+  "description": "A Yeoman generator to bootstrap responsive emails",
   "license": "MIT",
   "main": "app/index.js",
-  "repository": "drgfunk/generator-tmemail",
+  "repository": "https://github.com/trendyminds/generator-tmemail",
   "author": {
     "name": "Joshua Roof",
-    "email": "josh.roof@gmail.com",
-    "url": "https://github.com/drgfunk"
+    "email": "jroof@trendyminds.com",
+    "url": "https://github.com/trendyminds/generator-tmemail"
   },
   "engines": {
     "node": ">=0.10.0"
