@@ -3,11 +3,13 @@ module.exports = (grunt) ->
   require('load-grunt-tasks') grunt
   require("time-grunt") grunt
 
-  grunt.initConfig
-
-    config:
+  config =
       src: 'app'
       build: 'build'
+
+  grunt.initConfig
+
+    config: config
 
     connect:
       options:
@@ -81,9 +83,20 @@ module.exports = (grunt) ->
           form: {}
           sourceField: 'form.source'
           json: true
-        files:
-          '<%= config.build %>/template.html': '<%= config.src %>/_tmp/template.html'
-          '<%= config.build %>/basic.html': '<%= config.src %>/_tmp/basic.html'
+        files: ( ->
+
+            matches = grunt.file.expand({cwd: config.src + '/_tmp'}, '*.html')
+
+            f = []
+            matches.forEach (value, index) ->
+
+              prop = '<%= config.build %>/' + value
+              obj = {}
+              obj[prop] = '<%= config.src %>/_tmp/' + value
+              f.push obj
+
+            f
+          )()
 
     notify:
       scss:
