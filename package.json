@@ -1,6 +1,6 @@
 {
   "name": "generator-tmemail",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A Yeoman generator to bootstrap responsive emails",
   "license": "MIT",
   "main": "app/index.js",
